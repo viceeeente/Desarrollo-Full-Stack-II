@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+}
+
+
+
+#banner{
+    width: 100vw;
+    height: 30vh;
+    background-image: url("https://wallpapers.com/images/hd/1920x1080-aesthetic-glrfk0ntspz3tvxg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+nav{
+    height: 12vh;
+    background-color: rgb(195, 169, 243);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 10vw;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
