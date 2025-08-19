@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+article{
+    min-height: 100vh;
+}
+
+section{
+    height: 50vh;
+    width: 100%;
+}
+
+#arriba{
+    background-image: url('https://www.ahorrapets.com.uy/cdn/shop/collections/gatos.png?v=1735833266');
+    background-color: #D3E5F3;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 40%;
+}
+
+#abajo{
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+}
+
+.card{
+    width: 17vw;
+    height: fit-content;
+    box-shadow: 0 0 10px #00000098;
+    border-radius: 20px;
+    padding: 2rem 1rem;
+    margin-top: -3rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: .7rem;
+    animation-name: subir;
+    animation-duration: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition-duration: 500ms !important;
+}
+
+.card:hover{
+    background-color: whitesmoke;
+    transform: scale(1.1) !important;
+}
+
+@keyframes subir {
+    from{
+        opacity: 0;
+        transform: translateY(150px);
+    }to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.card:nth-child(2){
+    animation-delay: .2s;
+}
+.card:nth-child(3){
+    animation-delay: .4s;
+}
+.card:nth-child(4){
+    animation-delay: .6s;
+}
+.numero{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #b0aa94;
+}
+
+h3{
+   font-weight: 500; 
+}
+
+.texto{
+    font-style: italic;
+}
+
+
+
