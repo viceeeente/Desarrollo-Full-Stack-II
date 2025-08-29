@@ -1,0 +1,82 @@
+package org.example
+
+import kotlinx.coroutines.*
+
+//data class Pokemon (val id: Int, val nombre: String);
+
+
+
+//val charmander = Pokemon(1,"Charmander")
+//
+//
+//suspend fun getData(){
+//    println("Obteniendo Datos...")
+//    delay(1000L)
+//    println("{'message': 'CHOROMBO'}")
+//}
+//
+//fun main() = runBlocking{
+//    launch{
+//        getData()
+//    }
+//    launch{
+//        getData()
+//    }
+//    println("Se ejecutar al final")
+//}
+
+data class PerfilUsuario(val nombreUsuario: String, val email: String)
+sealed class ResultadoLogin (){
+    data class Exito(val perfil: PerfilUsuario) : ResultadoLogin()
+    data class Error(val mensaje: String) : ResultadoLogin()
+    object autenticando: ResultadoLogin()
+}
+
+suspend fun autenticarUsuario(usuario: String, contrasena:String) : ResultadoLogin{
+    delay(2000L)
+    return if (usuario == "admin" && contrasena == "1234"){
+        val perfil = PerfilUsuario("admin","admin@gmail.com")
+        ResultadoLogin.Exito(perfil)
+    }else{
+        ResultadoLogin.Error("Credenciales incorrectas!")
+    }
+}
+
+
+fun main() = runBlocking{
+    println("Ingrese sus datos: ")
+    val nombre = readln()
+    val password = readln()
+    println("Autenticando...")
+    val data = autenticarUsuario(nombre,password)
+    when(data){
+        is ResultadoLogin.Exito -> data.perfil.let{
+            println("Bienvenido ${data.perfil.nombreUsuario} - ${data.perfil.email}")
+        }
+        is ResultadoLogin.Exito -> println("Bienvenido ${data.perfil.nombreUsuario} - ${data.perfil.email}")
+        is ResultadoLogin.Error -> println("Error: ${data.mensaje}")
+        ResultadoLogin.autenticando -> println("Autenticando!...")
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
