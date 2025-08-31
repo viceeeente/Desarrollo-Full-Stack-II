@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    height: 22vh;
+    justify-content: space-evenly;
+    background-color: #00361C;
+    align-items: center;
+    padding: 0 10vw;
+}
+
+a{
+    color: #76AC98;
+    text-decoration: none;
+}
+
+a:hover
+
+#contact{
+    color: white;
+    background-color: #00BE5E;
+}
+
+#contact:hover{
+    color: white;
+    background-color: #76AC98;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.titulo h1{
+    size: 100px;
+}
